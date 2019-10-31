@@ -93,6 +93,8 @@ func (s *Segment) parse(seps *Delimeters) error {
 			r.ReadRune()
 		}
 	}
+
+	s.maxSeq = seq
 }
 
 // forceField will force the creation of a field / component / subcomponent

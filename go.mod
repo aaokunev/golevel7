@@ -1,4 +1,4 @@
-module github.com/wintermute-cds/golevel7
+module github.com/aaokunev/golevel7
 
 go 1.12
 
