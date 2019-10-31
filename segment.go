@@ -62,6 +62,7 @@ func (s *Segment) parse(seps *Delimeters) error {
 				fld.parse(seps)
 				s.Fields = append(s.Fields, fld)
 			}
+			s.maxSeq = seq
 			return nil
 		case isMSH && seq == 2 && ch == seps.Repetition:
 			// ignore repeat separator in separator definition
@@ -93,8 +94,6 @@ func (s *Segment) parse(seps *Delimeters) error {
 			r.ReadRune()
 		}
 	}
-
-	s.maxSeq = seq
 }
 
 // forceField will force the creation of a field / component / subcomponent
